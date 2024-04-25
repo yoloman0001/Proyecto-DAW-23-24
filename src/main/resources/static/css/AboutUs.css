@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fuentes/Roboto/Roboto-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fuentes/Oswald/Oswald-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+body {
+    font-family: Oswald, Roboto;
+}
+a {
+    color: #000000;
+}
+img {
+    width: 97px;
+    height: 90px;
+}
+/* ESTILO CUERPO */
+#main-content {
+    font-size: 21px;
+    height: 70vh;
+}
+

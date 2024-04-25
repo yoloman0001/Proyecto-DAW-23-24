@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <footer class="container-fluid py-3" id="main-footer" th:fragment="footer">
+        <div class="row align-items-end">
+          <div class="col" id="foot-menus">
+            <a href="#">Política de cookies</a>
+            <a href="#">Política de privacidad</a>
+          </div>
+          <div class="col" id="foot-imgs">
+            <img src="./images/phone-logo.png" title="+34 123 456 789" alt="Teléfono"/>
+            <a href="https://twitter.com/?lang=es">
+              <img src="./images/twitter-logo.png" title="Twitter" alt="Twitter" />
+            </a>
+            <a href="https://www.facebook.com/?locale=es_ES">
+              <img src="./images/facebook-logo.png" title="Facebook" alt="Facebook"/>
+            </a>
+          </div>
+          <div class="col" id="foot-credits">
+            <a href="/credits">Créditos</a>
+            <p>©<span th:text="${fecha}">xx/yy/zzzz</span> La Huerta del abuelo.es</p>
+          </div>
+        </div>
+      </footer>
+</body>
+
+</html>

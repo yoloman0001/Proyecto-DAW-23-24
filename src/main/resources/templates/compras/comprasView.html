@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Gestión de compras</h2>
+    <table border="1px" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Valor total</th>
+                <th>Estado</th>
+                <th>Usuario</th>
+                <th>Detalles de la compra</th>
+                <th>Borrar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="compra : ${listaCompras}">
+                <td th:text="${compra.id}">id</td>
+                <td th:text="${compra.fecha}">fecha</td>
+                <td th:text="${compra.valorTotal}">99.99</td>
+                <td th:text="${compra.estado}">en-proceso o finalizado</td>
+                <td th:text="${compra.usuario.nombre}">user</td>
+                <td><a th:href="@{/detallesCompra/{id} (id=${compra.id})}">Ir a detalles</a></td>
+                <td><a th:href="@{/compras/borrar/{id} (id=${compra.id})}">Borrar</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <p style="color:red;" th:text="${msg}">Mensaje</p>
+    <a th:href="@{/compras/nuevo}">Nueva compra</a><br/>
+    <a href="/home">Volver al indice</a>
+</body>
+</html>

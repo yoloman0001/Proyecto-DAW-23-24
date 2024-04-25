@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nuevo Usuario</h1>
+    <form method="post" action="#" th:action="@{/usuarios/nuevo/submit}" th:object="${usuarioForm}">
+        <!-- Id debe estar presente aunque sea autogenerado -->
+        <input type="hidden" id="id" th:field="*{id}"/> <br/>
+        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}"/></label> <br/>
+        <label>Correo electrónico: <input type="text" id="email" th:field="*{email}"/></label> <br/>
+        <label>Dirección <input type="text" id="direccion" th:field="*{direccion}"></label> <br/>
+        <label>Contraseña: <input type="password" id="contrasena" th:field="*{contrasena}"/></label> <br/>
+        <label>Rol:
+            <!-- Enumeraciones pag57 de los apuntes -->
+            <select name="roles" th:field="*{rol}">
+                <option th:each="rol : ${T(com.example.alrProy.domain.Rol).values()}" th:value="${rol}" th:text="${rol}"></option>
+            </select>
+        </label> <br/>
+        <input type="submit" value="Enviar">
+    </form>
+    <a th:href="@{/usuarios}">Volver a usuarios</a> <br/>
+</body>
+</html>

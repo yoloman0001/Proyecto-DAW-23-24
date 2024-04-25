@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre nosotros</title>
+  <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="./css/Cabeceras.css">
+  <link type="text/css" rel="stylesheet" href="./css/AboutUs.css">
+  <link type="text/css" rel="stylesheet" href="./css/Footer.css">
+</head>
+
+<body>
+  <header id="main-header" th:replace="~{./fragments/cabecerasFragment.html::cabecera}">
+
+  </header>
+  <nav th:replace="~{./fragments/cabecerasFragment.html::barraNav}">
+
+  </nav>
+
+  <main id="main-content">
+    <div class="container">
+      <img src="./images/quienes-somos.png" />
+      <h2>Sobre nosotros</h2>
+      <p>El propósito de esta página es promover la compra de productos agrícolas, cultivados de manera ecológica a
+        diferencia de las grandes productoras.
+
+      </p>
+      <h3>Cómo usar la página</h3>
+      <div class="container">
+        <p>En caso de que tengas problemas para usar la página, aquí te dejamos una pequeña guía:</p>
+        <ol>
+          <li>Crea una cuenta, se te solicitará un nombre de usuario, un correo electrónico una dirección de envío y una
+            contraseña.</li>
+          <li>Inicia sesión; en caso de ya tener una cuenta.</li>
+          <li>Acceder a la vista de productos por medio de una de las imágenes de la página principal, o por un de los
+            enlaces de la barra de navegación.</li>
+          <li>Añadir los productos que quieras comprar al carrito.</li>
+          <li>Accede al carrito desde la barra de navegación.</li>
+          <li>Confirma el pedido para finalizar la compra.</li>
+        </ol>
+      </div>
+      <a href="/home">Volver al indice</a>
+    </div>
+  </main>
+
+  <footer class="container-fluid py-3" id="main-footer">
+    <div class="row align-items-end">
+      <div class="col" id="foot-menus">
+        <a href="#">Política de cookies</a>
+        <a href="#">Privacidad</a>
+      </div>
+      <div class="col" id="foot-imgs">
+        <img src="./images/phone-logo.png" title="+34 123 456 789" alt="Teléfono">
+        <a href="https://twitter.com/?lang=es">
+          <img src="./images/twitter-logo.png" title="Twitter" alt="Twitter" />
+        </a>
+        <a href="https://www.facebook.com/?locale=es_ES">
+          <img src="./images/facebook-logo.png" title="Facebook" alt="Facebook" />
+        </a>
+      </div>
+      <div class="col" id="foot-credits">
+        <a href="/credits">Créditos</a>
+        <p>@2024 La Huerta del abuelo.es</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

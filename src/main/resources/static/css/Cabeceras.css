@@ -1,0 +1,83 @@
+img {
+  width: 97px;
+  height: 90px;
+}
+.btn {
+  font-size: 21px; /* La clase btn de BootStrap sobrescribe la font-size */
+}
+/* ESTILO HEADER */
+#main-header {
+  border: 3px solid #000000;
+  background-color: #619647;
+  color: #000000;
+  font-size: 21px;
+}
+
+#logotipo {
+  float: left;
+}
+#logotipo span {
+  display: inline-block;
+}
+
+#header-menus {
+  width: 50%;
+}
+#header-menus * {
+  margin: 0 20px;
+  display: inline-block;
+}
+#idiomas {
+  background-color: #619647;
+  border: none;
+}
+
+#user-menus {
+  float: right;
+}
+#user-menus * {
+  display: inline-block;
+}
+
+div.register {
+  background-color: #ffb833;
+  border: 2px solid #000000;
+  padding: 10px;
+}
+div.register a {
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+/* ESTILO NAVBAR */
+#navigation {
+  border: 3px solid #000000;
+  background-color: #6ed06f;
+  color: #000000;
+  font-size: 21px;
+  display: block;
+}
+#navigation div.col {
+  display: inline-block;
+}
+#nav-menus * {
+  margin: 0 30px;
+}
+#search-menus {
+  width: 50%;
+  float: right;
+}
+#search-menus * {
+  display: inline-block;
+}
+#search-bar {
+  padding: 5px;
+  margin: 0 20px;
+}
+#search-bar * {
+  display: inline-block;
+}
+#lupa {
+  width: 57px;
+  height: 50px;
+}

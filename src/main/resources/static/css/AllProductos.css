@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fuentes/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Oswald";
+  src: url("../fuentes/Oswald/Oswald-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+body {
+  font-family: Oswald, Roboto;
+}
+a {
+  color: #000000;
+}
+img {
+  width: 97px;
+  height: 90px;
+}
+/* ESTILO CUERPO */
+#main-content {
+  font-size: 21px;
+  margin-left: 5%;
+  height: 70vh;
+}
+.desplegable {
+  margin: 15px 0;
+}
+/* Solo para destacadosView */
+.destacados {
+  background-color: #ffb833;
+  border: #d59928;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Carrito de la compra</h2>
+    
+    <table border="1px" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Compra</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Borrar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="detallesCompra : ${listaDetallesCompra}">
+                <td th:text="${detallesCompra.id}">Id</td>
+                <td th:text="${detallesCompra.compra.id}">compra</td>
+                <td th:text="${detallesCompra.producto.nombre}">producto</td>
+                <td th:text="${detallesCompra.cantidad}">cantidad</td>
+                <td><a th:href="@{/detallesCompra/borrar/{id} (id=${detallesCompra.id})}">Borrar</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="border: 1px, solid, #000000;">
+        <a th:href="@{/compras/confirmar/{id} (id=${compra.id})}">Finalizar Compra</a><br/>
+    </div>
+
+    <a href="/compras">Volver a compras</a><br/>
+    <a href="/home">Volver al indice</a>
+</body>
+</html>

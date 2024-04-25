@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Añadir producto al pedido</h1>
+    <form method="post" action="#" th:action="@{/detallesCompra/nuevo/submit}" th:object="${detallesCompraForm}">
+        <label>Id: <input type="hidden" id="id" th:field="*{id}"/> </label> <br/>
+        <label>Compra
+            <select name="compra" th:field="*{compra}">
+                <option th:each="compra : ${listaCompras}" th:value="${compra.id}" th:text="${compra.id}"> </option>
+            </select>
+        </label> <br/>
+        <label>Producto
+            <select name="producto" th:field="*{producto}">
+                <option th:each="producto : ${listaProductos}" th:value="${producto.id}" th:text="${producto.nombre}"> </option>
+            </select>
+        </label> <br/>
+        <label>Cantidad: <input type="number" id="cantidad" th:field="*{cantidad}"/></label> <br/>
+        <input type="submit" value="Enviar"/>
+    </form>
+    <a th:href="@{/compras}">Volver a Compras</a> <br/>
+</body>
+</html>

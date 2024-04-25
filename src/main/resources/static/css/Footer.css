@@ -1,0 +1,22 @@
+/* ESTILO FOOTER */
+#main-footer {
+    border: 1px solid #000000;
+    background-color: #b8b8b8;
+    color: #000000;
+    font-size: 15px;
+}
+#main-footer img {
+    width: 30px;
+    height: 30px;
+    margin: 0 25px;
+}
+#foot-menus * {
+    margin: 0 30px;
+}
+#foot-credits {
+    float: right;
+}
+#foot-credits * {
+    display: inline-block;
+    margin: 0 30px;
+}

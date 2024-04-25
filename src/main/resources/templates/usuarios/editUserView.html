@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Editar usuario</h1>
+    <form method="post" action="#" th:action="@{/usuarios/editar/submit}" th:object="${usuarioForm}">
+        <label>Id: <input type="hidden" id="id" th:field="*{id}"/> </label> <br/>
+        <label>Nombre: <input type="text" id="nombre" th:field="*{nombre}"/></label> <br/>
+        <label>Dirección: <input type="text" id="direccion" th:field="*{direccion}"/></label> <br/>
+        <label>Contraseña: <input type="hidden" id="contrasena" th:field="*{contrasena}"/></label> <br/>
+        <input type="submit" value="Enviar"/>
+    </form>
+    <a th:href="@{/usuarios}">Volver a Usuarios</a> <br/>
+</body>
+</html>

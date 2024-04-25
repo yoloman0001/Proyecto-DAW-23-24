@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Nueva compra</h1>
+    <form method="post" action="#" th:action="@{/compras/nuevo/submit}" th:object="${compraForm}">
+        <label>Id: <input type="hidden" id="id" th:field="*{id}"/> </label> <br/>
+        <label>Fecha: <input type="date" id="fecha" th:field="*{fecha}"/></label> <br/>
+        <label>Usuario
+            <select name="usuario" th:field="*{usuario}">
+                <option th:each="user : ${listaUsuarios}" th:value="${user.id}" th:text="${user.nombre}"> </option>
+            </select>
+        </label> <br/>
+        <input type="submit" value="Enviar"/>
+    </form>
+    <a th:href="@{/compras}">Volver a Compras</a> <br/>
+</body>
+</html>

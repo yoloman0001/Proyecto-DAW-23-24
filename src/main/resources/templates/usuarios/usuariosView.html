@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Gestión de Usuarios</h2><br/>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Dirección</th>
+                <th>Contraseña</th>
+                <th>Rol</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="usuario : ${listaUsuarios}">
+                <td th:text="${usuario.id}">Id</td>
+                <td th:text="${usuario.nombre}">nombre</td>
+                <td th:text="${usuario.direccion}">direccion</td>
+                <td th:text="${usuario.contrasena}">contrasena</td>
+                <td th:text="${usuario.rol}">admin o usuario</td>
+                <td><a th:href="@{/usuarios/borrar/{id} (id=${usuario.id})}">Borrar</a></td>
+        </tbody>
+    </table>
+    <p style="color:red;" th:text="${msg}">Mensaje error</p>
+    <a href="/home">Volver al indice</a><br/>
+    <a th:href="@{/usuarios/nuevo}">Crear usuario</a><br/>
+</body>
+</html>
