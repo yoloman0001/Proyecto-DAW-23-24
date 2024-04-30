@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactos</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="/css/Cabeceras.css">
+    <link type="text/css" rel="stylesheet" href="/css/AboutUs.css">
+    <link type="text/css" rel="stylesheet" href="/css/Footer.css">
+</head>
+
+<body>
+    <header id="main-header" th:replace="~{./fragments/cabecerasFragment.html::cabecera}">
+
+    </header>
+    <nav th:replace="~{./fragments/cabecerasFragment.html::barraNav}">
+
+    </nav>
+
+    <main id="main-content">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <p>Para cualquier consulta sobre la página, utilice uno de nuestros medios de contacto</p>
+            <ul>
+                <li>Correo de atención al cliente: infolahuerta@gmail.com</li>
+                <li>Teléfono de contacto: +34 123 456 789</li>
+                <li>Redes sociales:<br/>
+                    <a href="https://twitter.com/?lang=es" target="_blank">Twitter</a><br/>
+                    <a href="https://www.facebook.com/?locale=es_ES" target="_blank">Facebook</a><br/>
+                </li>
+            </ul>            
+        </div>
+        <a href="/home">Volver al indice</a>
+    </main>
+
+    <footer th:replace="~{./fragments/footerFragment.html::footer}">
+      
+    </footer>
+</body>
+
+</html>

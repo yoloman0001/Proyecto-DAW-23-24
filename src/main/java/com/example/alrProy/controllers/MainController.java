@@ -14,7 +14,7 @@ import com.example.alrProy.services.UsuarioServiceImpl;
 
 
 @Controller
-public class MainControlador {
+public class MainController {
     @Autowired
     MainService mainServicio;
     @Autowired
@@ -41,6 +41,10 @@ public class MainControlador {
         String nombre = mainServicio.nombreAboutUs();
         model.addAttribute("nombre", nombre);
         return "aboutUsView";
+    }
+    @GetMapping("/contact")
+    public String showContactos(Model model) {
+        return "contactView";
     }
     @GetMapping("/credits")
     public String showCredits() {

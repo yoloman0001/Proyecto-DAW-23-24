@@ -16,8 +16,9 @@ img {
 #logotipo {
   float: left;
 }
-#logotipo span {
+#logotipo * {
   display: inline-block;
+  text-decoration: none;
 }
 
 #header-menus {
