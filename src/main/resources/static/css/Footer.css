@@ -4,19 +4,40 @@
     background-color: #b8b8b8;
     color: #000000;
     font-size: 15px;
+    position: relative;
 }
+
 #main-footer img {
     width: 30px;
     height: 30px;
     margin: 0 25px;
 }
+
 #foot-menus * {
     margin: 0 30px;
 }
+
 #foot-credits {
     float: right;
 }
+
 #foot-credits * {
     display: inline-block;
     margin: 0 30px;
+}
+
+/* FOOTER PARA PROBLEMAS DE FIXING */
+#footer-2 {
+    border: 1px solid #000000;
+    background-color: #b8b8b8;
+    color: #000000;
+    font-size: 15px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+#footer-2 img {
+    width: 30px;
+    height: 30px;
+    margin: 0 25px;
 }

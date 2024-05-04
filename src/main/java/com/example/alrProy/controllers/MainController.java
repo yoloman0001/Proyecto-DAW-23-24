@@ -43,9 +43,20 @@ public class MainController {
         return "aboutUsView";
     }
     @GetMapping("/contact")
-    public String showContactos(Model model) {
+    public String showContactos() {
         return "contactView";
     }
+
+    @GetMapping("/privacy")
+    public String showPrivacyPolicy() {
+        return "footerpages/privacidadView";
+    }
+
+    @GetMapping("/cookies")
+    public String showCookiePolicy() {
+        return "footerpages/cookiesView";
+    }
+
     @GetMapping("/credits")
     public String showCredits() {
         return "creditosView";
