@@ -71,11 +71,11 @@ div.register a {
 #search-menus * {
   display: inline-block;
 }
-#search-bar {
+.search-bar {
   padding: 5px;
   margin: 0 20px;
 }
-#search-bar * {
+.search-bar * {
   display: inline-block;
 }
 #lupa {

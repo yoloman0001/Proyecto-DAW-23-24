@@ -8,6 +8,8 @@
   <title>La Huerta del Abuelo</title>
   <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="/js/Productos.js"></script>
+  <script type="text/javascript" src="/js/Buscador.js"></script>
   
   <link type="text/css" rel="stylesheet" href="/css/AllProductos.css">
   <link type="text/css" rel="stylesheet" href="/css/Cabeceras.css">
@@ -25,7 +27,7 @@
 <main >
   <h2>Nuestros productos</h2><br />
   
-  <select class="desplegable" id="selectCat" onChange="changeCategoria();">
+  <select class="desplegable" id="selectCat">
     <option value="0">Todas las categorias</option>
     <option th:each="cat : ${listaCategorias}" th:value="${cat.id}" th:text="${cat.nombre}"
       th:selected="${cat.id} == ${catSeleccionada.id} ? true : false"></option>
@@ -75,12 +77,12 @@
   </footer>
 </body>
 
-<script>
+<!-- <script>
   function changeCategoria() {
     const select = document.getElementById("selectCat");
     if (select.value == 0) window.location.href = "/productos";
     else window.location.href = "/productos/porCat/" + select.value;
   }
-</script>
+</script> -->
 
 </html>

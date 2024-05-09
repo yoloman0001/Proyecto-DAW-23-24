@@ -1,5 +1,8 @@
 package com.example.alrProy.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +31,7 @@ public class ProductoController {
     @GetMapping("/productos")
     public String showProducts(@RequestParam(required = false) Integer op, Model model) {
         model.addAttribute("listaProductos", productoService.obtenerTodos());
+        // Para los desplegables
         model.addAttribute("listaCategorias", categoriaService.obtenerTodos());
         model.addAttribute("catSeleccionada", new Categoria (0L,"Todas"));
         model.addAttribute("listaTemporadas", productoService.obtenerTodasTemporadas());
@@ -90,6 +94,17 @@ public class ProductoController {
         model.addAttribute("listaProductos", productoService.obtenerPorTemporada(temporada));
         model.addAttribute("listaTemporadas", productoService.obtenerTodasTemporadas());
         model.addAttribute("temSeleccionada", productoService.obtenerPorTemporada(temporada));
+        return "productos/productosView";
+    }
+
+    @GetMapping("/productos/buscar/{texto}")
+    public String searchProductos(@PathVariable String texto, Model model) {
+        for (int i=0; i<productoService.obtenerTodos().size(); i++) {
+            ArrayList<Producto> listaProductos = new ArrayList<>(productoService.obtenerTodos());
+            if (listaProductos.get(i).getNombre().equals(texto)) {
+                return "redirect:/productos/porCat/"+listaProductos.get(i).getCategoria().getId();
+            }
+        }
         return "productos/productosView";
     }
 
