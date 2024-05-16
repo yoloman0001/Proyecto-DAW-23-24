@@ -1,7 +1,6 @@
 package com.example.alrProy.controllers;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -53,6 +52,7 @@ public class ProductoController {
         model.addAttribute("listaCategorias", categoriaService.obtenerTodos());
         return "productos/newProductView";
     }
+    
     @PostMapping("/productos/nuevo/submit")
     public String showNewProduct(@Valid Producto productoForm, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
@@ -101,7 +101,7 @@ public class ProductoController {
     public String searchProductos(@PathVariable String texto, Model model) {
         for (int i=0; i<productoService.obtenerTodos().size(); i++) {
             ArrayList<Producto> listaProductos = new ArrayList<>(productoService.obtenerTodos());
-            if (listaProductos.get(i).getNombre().equals(texto)) {
+            if (listaProductos.get(i).getNombre().contains(texto)) {
                 return "redirect:/productos/porCat/"+listaProductos.get(i).getCategoria().getId();
             }
         }

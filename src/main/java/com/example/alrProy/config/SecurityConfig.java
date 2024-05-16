@@ -38,7 +38,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(auth -> auth
                 // Como las reglas de seguridad se evaluan por orden,
                 // dejamos las reglas más restrictivas al principio para evitar accesos a mappings que no deben
-                .requestMatchers("/usuarios/**", "/compras", "/compras/nuevo/**", "/compras/borrar/**").hasRole("ADMIN")
+                .requestMatchers("/usuarios/**", "/compras", "/compras/nuevo/**", "/compras/borrar/**", "/h2-console").hasRole("ADMIN")
                 .requestMatchers("/productos/nuevo/**", "/productos/borrar/**", "/productos/editar/**", "/categorias/nuevo/**", "/categorias/borrar/**").hasRole("ADMIN")
                 .requestMatchers("/detallesCompra/**", "/productos/comprar/**", "/compras/confirmar/**").hasAnyRole("ADMIN", "USUARIO")
                 .requestMatchers("/home", "/aboutUs" , "/productos/**", "/categorias").permitAll()
