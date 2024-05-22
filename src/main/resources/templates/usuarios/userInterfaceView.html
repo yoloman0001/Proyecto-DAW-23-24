@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/js/Buscador.js"></script>
+    <script type="text/javascript" src="/js/VerContrasena.js"></script>
+    
+    <link rel="stylesheet" href="/css/UserInterface.css" type="text/css">
+    <link rel="stylesheet" href="/css/Cabeceras.css" type="text/css">
+    <link rel="stylesheet" href="/css/Footer.css" type="text/css">
+</head>
+
+<body>
+    <header th:replace="~{./fragments/cabecerasFragment.html::cabecera}">
+        
+    </header>
+    <nav th:replace="~{./fragments/cabecerasFragment.html::barraNav}">
+      
+    </nav>
+    <main id="main-content">
+        <div class="container text-center">
+            <div class="offcanvas offcanvas-start" id="aside">
+                <div class="offcanvas-header">
+                    <h1 class="offcanvas-title">Funciones de usuario</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <button class="btn" type="button">
+                        <a href="/password">Cambiar Contraseña</a>
+                    </button><br/>
+                    <button class="btn" type="button">
+                        <a>Cambiar Dirección</a>
+                    </button><br/>
+                    <button class="btn" type="button">
+                        <a>Ver Carrito</a>
+                    </button><br/>
+                </div>
+            </div>
+
+            <div>
+                <p>Pulsa el botón para desplegar funciones de usuario</p>
+                <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#aside">
+                    Abrir funciones usuario
+                </button>
+            </div>
+            <div class="container text-center">
+                <h2>Datos del usuario</h2>
+                <p>Nombre de usuario: <span th:text="${usuarioConectado.nombre}">Nombre</span></p>
+                <p>Correo electrónico: <span th:text="${usuarioConectado.email}">micorreo@gmail.com</span></p>
+                <p>Dirección de envío: <span th:text="${usuarioConectado.direccion}">Calle 1</span></p>
+                <button class="btn toggle-contrasena">Ver Contraseña: </button>
+                <p id="contrasena" class="contrasenaFalse" th:text="${usuarioConectado.contrasena}"></p>
+            </div>
+        </div>
+    </main>
+    <footer th:replace="~{./fragments/footerFragment.html::footer}">
+      
+    </footer>
+</body>
+</html>

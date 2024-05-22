@@ -5,6 +5,9 @@ img {
 .btn {
   font-size: 21px; /* La clase btn de BootStrap sobrescribe la font-size */
 }
+a:hover {
+  color: #000000;
+}
 /* ESTILO HEADER */
 #main-header {
   border: 3px solid #000000;

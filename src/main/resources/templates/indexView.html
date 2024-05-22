@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Huerta del Abuelo</title>
+    <title>Inicio | La Huerta del Abuelo</title>
+    <link rel="icon" type="image/x-icon" href="/images/LogotipoProyecto.jpg">
+
     <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="/js/Buscador.js"></script>
     
-    <link rel="stylesheet" href="./css/Main.css" type="text/css">
-    <link rel="stylesheet" href="./css/Cabeceras.css" type="text/css">
-    <link rel="stylesheet" href="./css/Footer.css" type="text/css">
+    <link rel="stylesheet" href="/css/Main.css" type="text/css">
+    <link rel="stylesheet" href="/css/Cabeceras.css" type="text/css">
+    <link rel="stylesheet" href="/css/Footer.css" type="text/css">
 </head>
 <body>
     <header th:replace="~{./fragments/cabecerasFragment.html::cabecera}">
@@ -25,50 +27,50 @@
             <div class="row">
               <div class="col-sm my-1 mx-2">
                 <a href="/productos/porCat/1">
-                  <img src="./images/Frutas-Variadas.jpg" alt="Ir a frutas"/>
+                  <img src="/images/Frutas-Variadas.jpg" alt="Ir a frutas"/>
                 </a>
                 <p>Frutas</p>
               </div>
               <div class="col-sm my-1 mx-2">
                 <a href="/productos/porCat/2">
-                  <img src="./images/Vegetales-Mixtos.jpg" alt="Ir a verduras"/>
+                  <img src="/images/Vegetales-Mixtos.jpg" alt="Ir a verduras"/>
                 </a>
                 <p>Verduras</p>
               </div>
               <div class="col-sm my-1 mx-2">
                 <a href="/productos">
-                  <img src="./images/varios-legumbres.jpg" alt="Ir a más categorías"/>
+                  <img src="/images/varios-legumbres.jpg" alt="Ir a más categorías"/>
                 </a>
                 <p>Más categorías</p>
               </div>
             </div>
         </div>
 
-        <div sec:authorize="hasRole('ADMIN')">
-            <ul>
-                <li> <a href="/categorias">Categorias de productos</a> </li>
-                <li> <a href="/usuarios">Gestión de usuarios</a> </li>
-                <li> <a href="/compras">Gestión de compras</a> </li>
-                <li> <a th:href="@{/carritoCompra}">Carrito de compra</a> </li>
-            </ul>
-            <p style="color:red;" th:text="${msg}">Mensaje</p><br/>
-            <li class="nav-item ms-md-auto dropdown" sec:authorize="isAuthenticated()">
-                <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span sec:authentication="name"></span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="/password">Cambiar Contraseña</a></li>
-                    <!-- Este enlace me lleva a una vista que me pregunta si me quiero desconectar -->
-                    <li><a class="dropdown-item" th:href="@{/signout}">Cerrar sesión GET</a></li>
-                    <!-- Este formulario me desconecta directamente -->
-                    <li>
-                        <form th:action="@{/logout}" method="post">
-                            <button class="dropdown-item" type="submit">Cerrar sesión POST</button>
-                        </form>
-                    </li>
-                </ul>
-            </li>
+        <div class="container" sec:authorize="hasRole('ADMIN')">
+          <ul>
+              <li> <a href="/categorias">Categorias de productos</a> </li>
+              <li> <a href="/usuarios">Gestión de usuarios</a> </li>
+              <li> <a href="/compras">Gestión de compras</a> </li>
+              <li> <a th:href="@{/carritoCompra}">Carrito de compra</a> </li>
+          </ul>
+          <p style="color:red;" th:text="${msg}">Mensaje</p><br/>
+          <li class="nav-item ms-md-auto dropdown" sec:authorize="isAuthenticated()">
+              <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                      data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span sec:authentication="name"></span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                  <li><a class="dropdown-item" href="/password">Cambiar Contraseña</a></li>
+                  <!-- Este enlace me lleva a una vista que me pregunta si me quiero desconectar -->
+                  <li><a class="dropdown-item" th:href="@{/signout}">Cerrar sesión GET</a></li>
+                  <!-- Este formulario me desconecta directamente -->
+                  <li>
+                      <form th:action="@{/logout}" method="post">
+                          <button class="dropdown-item" type="submit">Cerrar sesión POST</button>
+                      </form>
+                  </li>
+              </ul>
+          </li>
         </div>
 
     </main>
