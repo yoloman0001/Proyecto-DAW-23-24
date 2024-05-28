@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mi Cuenta | La Huerta del Abuelo</title>
+    <link rel="icon" type="image/x-icon" href="/images/LogotipoProyecto.jpg">
+
     <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="/js/Buscador.js"></script>
@@ -33,11 +35,14 @@
                         <a href="/password">Cambiar Contraseña</a>
                     </button><br/>
                     <button class="btn" type="button">
-                        <a>Cambiar Dirección</a>
+                        <a href="/direction">Cambiar Dirección</a>
                     </button><br/>
                     <button class="btn" type="button">
-                        <a>Ver Carrito</a>
+                        <a th:href="@{/carritoCompra}">Ver Carrito</a>
                     </button><br/>
+                    <button class="btn" type="button">
+                        <a th:href="@{/signout}">Cerrar sesión</a>
+                    </button>
                 </div>
             </div>
 

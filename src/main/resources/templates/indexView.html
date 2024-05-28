@@ -60,7 +60,6 @@
                       <span sec:authentication="name"></span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="/password">Cambiar Contraseña</a></li>
                   <!-- Este enlace me lleva a una vista que me pregunta si me quiero desconectar -->
                   <li><a class="dropdown-item" th:href="@{/signout}">Cerrar sesión GET</a></li>
                   <!-- Este formulario me desconecta directamente -->
@@ -72,7 +71,6 @@
               </ul>
           </li>
         </div>
-
     </main>
 
     <footer th:replace="~{./fragments/footerFragment.html::footer}">

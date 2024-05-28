@@ -82,6 +82,17 @@ public class MainController {
         return "redirect:/home?op=3";
     }
 
+    @GetMapping("/direction")
+    public String showEditDirection(Model model) {
+        model.addAttribute("directionForm", new UsuarioDto());
+        return "usuarios/editAddressView";
+    }
+    @PostMapping("/direction/submit")
+    public String showEditDirectionSubmit(UsuarioDto usuarioDto) {
+        usuarioService.cambiarDireccion(usuarioDto);
+        return "redirect:/home?op=3";
+    }
+
     @GetMapping("/accessError")
     public String showAccessError() {
         return "error/403";

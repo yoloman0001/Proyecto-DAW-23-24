@@ -34,6 +34,10 @@ fieldset {
   text-align: center;
 }
 
+#mensajeError {
+  color: #FF0000;
+}
+
 #entrar {
   background-color: #ffb833;
   border: 2px solid #000000;

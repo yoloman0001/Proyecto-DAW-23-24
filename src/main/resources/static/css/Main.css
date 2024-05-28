@@ -23,7 +23,7 @@ img {
 /* ESTILO CUERPO */
 #main-content {
   font-size: 21px;
-  /* height: 70vh; */
+  height: 70vh;
 }
 #main-content h1,
 #main-content p {

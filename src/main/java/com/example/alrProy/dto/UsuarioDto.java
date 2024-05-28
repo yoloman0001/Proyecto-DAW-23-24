@@ -7,4 +7,6 @@ public class UsuarioDto {
     private String nombre;
 
     private String contrasena;
+
+    private String direccion;
 }

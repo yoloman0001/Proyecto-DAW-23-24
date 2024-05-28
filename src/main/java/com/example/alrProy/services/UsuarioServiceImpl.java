@@ -60,4 +60,10 @@ public class UsuarioServiceImpl {
         usuario.setContrasena(passwordEncoder.encode(usuarioDto.getContrasena()));
         return usuarioRepositorio.save(usuario);
     }
+
+    public Usuario cambiarDireccion (UsuarioDto usuarioDto) {
+        Usuario usuario = obtenerUsuarioConectado();
+        usuario.setDireccion(usuarioDto.getDireccion());
+        return usuarioRepositorio.save(usuario);
+    }
 }
