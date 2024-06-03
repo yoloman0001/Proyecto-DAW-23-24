@@ -2,6 +2,7 @@ window.addEventListener("load", iniciar);
 
 function iniciar() {
     document.querySelector('#entrar').addEventListener('click', cambiarContraseña, false);
+    borrarError();
 }
 
 function cambiarContraseña(e) {
@@ -18,6 +19,7 @@ function cambiarContraseña(e) {
         e.preventDefault();
         return false;
     }
+    alert("Has cambiado tu contraseña");
     return true;
 }
 

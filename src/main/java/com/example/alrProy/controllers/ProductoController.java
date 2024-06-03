@@ -105,7 +105,7 @@ public class ProductoController {
                 return "redirect:/productos/porCat/"+listaProductos.get(i).getCategoria().getId();
             }
         }
-        return "productos/productosView";
+        return "redirect:/productos";
     }
 
     @GetMapping("/productos/destacados")

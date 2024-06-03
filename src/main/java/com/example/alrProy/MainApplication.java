@@ -100,7 +100,9 @@ public class MainApplication {
 			productoService.anhadir(
 					new Producto(0L, "Alubias rojas", 2.1, "normal", "invierno", false, 60, categoria3));
 			productoService.anhadir(
-					new Producto(0L, "Cacahuete", 1.9, "normal", "todo el año", true, 60, categoria2));
+					new Producto(0L, "Cacahuete", 1.9, "normal", "todo el año", true, 60, categoria3));
+			productoService.anhadir(
+					new Producto(0L, "Frijol común", 1.9, "normal", "verano", false, 50, categoria3));
 			productoService.anhadir(
 					new Producto(0L, "Zanahoria", 1.0, "reducido", "primavera", true, 40, categoria4));
 			productoService.anhadir(
@@ -129,6 +131,8 @@ public class MainApplication {
 					new Producto(0L, "Jengibre", 1.7, "normal", "invierno", false, 30, categoria5));
 			usuarioService.anhadir(
 					new Usuario(1L, "Pepe", "pepe@gmail.com", "Mato Grande 101", "qwerty", Rol.ADMIN));
+			usuarioService.anhadir(
+					new Usuario(2L, "test", "test@gmail.com", "Calle Real 1", "12345¡", Rol.USUARIO));
 		};
 	}*/
 }
