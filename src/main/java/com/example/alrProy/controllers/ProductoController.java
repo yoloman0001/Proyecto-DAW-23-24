@@ -86,6 +86,7 @@ public class ProductoController {
         model.addAttribute("listaProductos", productoService.obtenerPorCategoria(idCat));
         model.addAttribute("listaCategorias", categoriaService.obtenerTodos());
         model.addAttribute("catSeleccionada", categoriaService.obtenerPorId(idCat));
+        model.addAttribute("listaTemporadas", productoService.obtenerTodasTemporadas());
         return "productos/productosView";
     }
 
@@ -93,7 +94,6 @@ public class ProductoController {
     public String showListInCategoria(@PathVariable String temporada, Model model) {
         model.addAttribute("listaProductos", productoService.obtenerPorTemporada(temporada));
         model.addAttribute("listaTemporadas", productoService.obtenerTodasTemporadas());
-        model.addAttribute("temSeleccionada", productoService.obtenerPorTemporada(temporada));
         return "productos/productosView";
     }
 

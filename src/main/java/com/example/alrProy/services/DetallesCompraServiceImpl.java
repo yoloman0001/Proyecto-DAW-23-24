@@ -32,7 +32,11 @@ public class DetallesCompraServiceImpl {
     public void borrar (Long id) {
         DetallesCompra detallesCompra = detallesCompraRepositorio.findById(id).orElse(null);
         if (detallesCompra != null) {
+            Double valorTotal = detallesCompra.getCompra().getValorTotal();
+            valorTotal -= detallesCompra.getProducto().getPrecio();
+            detallesCompra.getCompra().setValorTotal(valorTotal);
             detallesCompraRepositorio.delete(detallesCompra);
+            detallesCompra.getProducto().setStock(detallesCompra.getProducto().getStock() + 1);
         }
     }
 

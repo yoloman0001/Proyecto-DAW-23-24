@@ -26,25 +26,25 @@
             <div>
                 <label>
                     <b>Nombre</b><br/>
-                    <input type="text" id="nombre" placeholder="Nombre de usuario" th:field="*{nombre}"/>
+                    <input type="text" id="nombre" placeholder="Nombre de usuario" th:field="*{nombre}" required/>
                 </label><br/>
             </div><br/>
             <div>
                 <label>
                     <b>Correo electrónico</b><br/>
-                    <input type="text" id="email" placeholder="correoelectronico@gmail.com" th:field="*{email}"/>
+                    <input type="email" id="email" placeholder="correoelectronico@gmail.com" th:field="*{email}" required/>
                 </label><br/>
             </div>
             <div>
                 <label>
                     <b>Dirección</b><br/>
-                    <input type="text" id="direccion" placeholder="Dirección de envío" th:field="*{direccion}"/>
+                    <input type="text" id="direccion" placeholder="Dirección de envío" th:field="*{direccion}" required/>
                 </label><br/>
             </div><br/>
             <div>
                 <label>
                     <b>Contraseña</b><br/>
-                    <input type="password" id="contrasena" placeholder="Al menos 4 caracteres" minlength="4" th:field="*{contrasena}"/>
+                    <input type="password" id="contrasena" placeholder="Al menos 4 caracteres" th:field="*{contrasena}" minlength="4" required/>
                 </label><br/>
             </div><br/>
             <!-- Los usuarios que se registran de esta manera reciben rol USUARIO automaticamente -->

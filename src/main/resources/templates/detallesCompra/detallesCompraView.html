@@ -10,7 +10,7 @@
     <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="/js/Buscador.js"></script>
-    <script type="text/javascript" src="/js/Productos.js"></script>
+    <script type="text/javascript" src="/js/Comprar.js"></script>
 
     <link type="text/css" rel="stylesheet" href="/css/Carrito.css">
     <link type="text/css" rel="stylesheet" href="/css/Cabeceras.css">
@@ -48,10 +48,10 @@
                 </tr>
             </tbody>
         </table>
-        <div class="btn">
-            <a th:href="@{/compras/confirmar/{id} (id=${compra.id})}" id="boton-compra">Finalizar Compra</a><br/>
+        <div>
+            <p>Total: <span th:text="${totalCompra}"></span>€</p>
         </div>
-
+        <a th:href="@{/compras/confirmar/{id} (id=${compra.id})}" class="btn boton-compra">Finalizar Compra</a>
     </main>
 
     <footer th:replace="~{./fragments/fixedFooterFragment.html::footer}">

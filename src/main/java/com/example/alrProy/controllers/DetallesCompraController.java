@@ -40,6 +40,7 @@ public class DetallesCompraController {
         Compra compra = compraService.obtenerPorId(id);
         model.addAttribute("listaDetallesCompra", detallesCompraService.obtenerPorCompra(compra));
         model.addAttribute("compra", compra);
+        model.addAttribute("totalCompra", compra.getValorTotal());
         return "detallesCompra/detallesCompraView";
     }
 
@@ -62,7 +63,7 @@ public class DetallesCompraController {
     @GetMapping("/detallesCompra/borrar/{id}")
     public String showDelete(@PathVariable Long id) {
         detallesCompraService.borrar(id);
-        return "redirect:/compras";
+        return "redirect:/carritoCompra";
     }
     
 }

@@ -5,7 +5,7 @@ function iniciar() {
     borrarError();
 }
 
-function verificarNuevaCuenta() {
+function verificarNuevaCuenta(e) {
     const usuario = document.querySelector('#nombre');
     const email = document.querySelector('#email');
     const direccion = document.querySelector('#direccion');
