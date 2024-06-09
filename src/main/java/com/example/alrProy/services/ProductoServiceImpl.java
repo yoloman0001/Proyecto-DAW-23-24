@@ -19,6 +19,9 @@ public class ProductoServiceImpl implements ProductoService {
     CategoriaRepository categoriaRepositorio;
 
     public Producto anhadir (Producto producto) {
+        if (producto.getEsDestacado() == null) {
+            producto.setEsDestacado(false);
+        }
         return productoRepositorio.save(producto);
     }
 

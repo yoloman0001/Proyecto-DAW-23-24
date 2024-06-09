@@ -54,22 +54,22 @@
               <li> <a th:href="@{/carritoCompra}">Carrito de compra</a> </li>
           </ul>
           <p style="color:red;" th:text="${msg}">Mensaje</p><br/>
-          <li class="nav-item ms-md-auto dropdown" sec:authorize="isAuthenticated()">
+          <!-- <li class="nav-item ms-md-auto dropdown" sec:authorize="isAuthenticated()">
               <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                       data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <span sec:authentication="name"></span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                  <!-- Este enlace me lleva a una vista que me pregunta si me quiero desconectar -->
+                  
                   <li><a class="dropdown-item" th:href="@{/signout}">Cerrar sesión GET</a></li>
-                  <!-- Este formulario me desconecta directamente -->
+                  
                   <li>
                       <form th:action="@{/logout}" method="post">
                           <button class="dropdown-item" type="submit">Cerrar sesión POST</button>
                       </form>
                   </li>
               </ul>
-          </li>
+          </li> -->
         </div>
     </main>
 
