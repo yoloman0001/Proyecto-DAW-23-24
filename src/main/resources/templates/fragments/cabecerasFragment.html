@@ -57,7 +57,8 @@
               <input id="buscador" type="text" placeholder="Buscar"/>
             </div>
             <a th:href="@{/carritoCompra}">
-              <img id="carrito" src="/images/CarritoUsuario.png" title="Carrito usuario" alt="Carrito usuario"/>
+              <img th:if="${compraActiva==null}" id="carrito" src="/images/CarritoUsuario.png" title="Carrito usuario" alt="Carrito usuario"/>
+              <img th:unless="${compraActiva==null}" id="carrito2" src="/images/CarritoLleno.png" title="Carrito usuario" alt="Carrito usuario"/>
             </a>
           </div>
         </div>

@@ -27,6 +27,7 @@ public class MainController {
         int fecha = mainServicio.fechaHome();
         model.addAttribute("fecha", fecha);
         model.addAttribute("listaUsuarios", usuarioService.obtenerTodos());
+        model.addAttribute("compraActiva", compraService.obtenerCompraActiva());
         if (op != null) {
             switch (op) {
                 case 1 -> model.addAttribute("msg", "Error en el registro de usuario: credenciales incorrectas");
