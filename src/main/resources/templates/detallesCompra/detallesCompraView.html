@@ -31,18 +31,20 @@
         <table class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <!-- <th>ID</th> -->
                     <th>Compra</th>
                     <th>Producto</th>
+                    <th>Precio</th>
                     <th>Cantidad</th>
                     <th>Eliminar</th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="detallesCompra : ${listaDetallesCompra}">
-                    <td th:text="${detallesCompra.id}">Id</td>
+                    <!-- <td th:text="${detallesCompra.id}">Id</td> -->
                     <td th:text="${detallesCompra.compra.id}">compra</td>
                     <td th:text="${detallesCompra.producto.nombre}">producto</td>
+                    <td th:text="${detallesCompra.producto.Precio}">€</td>
                     <td th:text="${detallesCompra.cantidad}">cantidad</td>
                     <td><a th:href="@{/detallesCompra/borrar/{id} (id=${detallesCompra.id})}">Eliminar</a></td>
                 </tr>

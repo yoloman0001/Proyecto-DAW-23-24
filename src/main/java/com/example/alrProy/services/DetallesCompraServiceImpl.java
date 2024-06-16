@@ -34,6 +34,7 @@ public class DetallesCompraServiceImpl {
         if (detallesCompra != null) {
             Double valorTotal = detallesCompra.getCompra().getValorTotal();
             valorTotal -= detallesCompra.getProducto().getPrecio();
+            valorTotal = (double) Math.round(valorTotal * 100) / 100;
             detallesCompra.getCompra().setValorTotal(valorTotal);
             detallesCompraRepositorio.delete(detallesCompra);
             detallesCompra.getProducto().setStock(detallesCompra.getProducto().getStock() + 1);
